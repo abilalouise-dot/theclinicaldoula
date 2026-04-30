@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About · The Clinical Doula</title>
+  <meta name="description" content="April Bogle, RN. Thirty-two years at the bedside. The story behind The Clinical Doula.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <style>
+    .about-hero {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 6rem 2rem 4rem;
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    .about-hero .portrait {
+      aspect-ratio: 3/4;
+      border: 1px solid var(--gold);
+      overflow: hidden;
+      position: relative;
+    }
+    .about-hero .portrait img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .about-hero h1 {
+      font-size: clamp(2.2rem, 4.5vw, 3.6rem);
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.2;
+    }
+    .about-hero .eyebrow {
+      color: var(--gold);
+      font-size: 0.72rem;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      font-family: var(--sans);
+      font-weight: 300;
+      margin-bottom: 1rem;
+      display: block;
+    }
+    .story {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+    .story p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      margin-bottom: 1.75rem;
+    }
+    .story p:first-of-type::first-letter {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 4rem;
+      float: left;
+      line-height: 0.85;
+      padding-right: 0.5rem;
+      padding-top: 0.4rem;
+      color: var(--gold);
+    }
+    .credentials {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+    .credentials h2 {
+      font-style: italic;
+      font-size: 2rem;
+      font-weight: 300;
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .credentials ul {
+      list-style: none;
+    }
+    .credentials li {
+      padding: 1rem 0 1rem 2rem;
+      position: relative;
+      font-size: 1.1rem;
+      border-bottom: 1px solid var(--gold-soft);
+    }
+    .credentials li::before {
+      content: '→';
+      color: var(--gold);
+      position: absolute;
+      left: 0;
+    }
+    .personal-note {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 6rem 2rem;
+      text-align: center;
+    }
+    .personal-note p {
+      font-size: 1.4rem;
+      font-style: italic;
+      line-height: 1.7;
+      font-weight: 300;
+    }
+    @media (max-width: 800px) {
+      .about-hero { grid-template-columns: 1fr; gap: 3rem; }
+      .about-hero .portrait { max-width: 320px; margin: 0 auto; }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <header class="site-nav">
+    <nav class="nav-inner" aria-label="Primary">
+      <a href="the-work.html" class="nav-link">The Work</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="for-physicians.html" class="nav-link">For Physicians</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <div class="mobile-menu" role="dialog" aria-modal="true" aria-label="Primary navigation">
+    <a href="index.html" class="menu-mark" aria-label="Home">
+      <svg viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="18" cy="18" r="16" fill="none" stroke="#0A0806" stroke-width="1"/>
+        <circle cx="18" cy="18" r="3" fill="#B8895A"/>
+      </svg>
+    </a>
+    <nav aria-label="Mobile primary">
+      <a href="index.html">Home</a>
+      <a href="the-work.html">The Work</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="for-physicians.html">For Physicians</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <hr class="menu-divider">
+    <span class="menu-call-label">Crisis Activation</span>
+    <a href="tel:+16159702015" class="menu-call">615 · 970 · 2015</a>
+  </div>
+
+  <main id="main">
+
+    <section class="about-hero">
+      <div class="portrait">
+        <img src="The Clinical Doula.jpeg" alt="April Bogle, RN — Founder of The Clinical Doula" loading="eager">
+      </div>
+      <div>
+        <span class="eyebrow">About</span>
+        <h1>I have spent thirty-two years at the bedsides of strangers.</h1>
+      </div>
+    </section>
+
+    <article class="story">
+      <p>I became a registered nurse because I wanted to help people in their hardest moments. I spent the next three decades doing exactly that — across emergency rooms, intensive care units, and the long aftermath of lives changed in an instant.</p>
+
+      <p>I learned the language of medicine. I learned how a body breaks, and how it heals. I learned what to say to a family when there are no good words left.</p>
+
+      <p>And I learned something the medical system does not say out loud: the patients who do best are the ones who are not alone. The ones whose families understand what is happening. The ones who have someone steady at the bedside translating, documenting, and holding the room together.</p>
+
+      <p>Most people do not have that person.</p>
+
+      <p>The Clinical Doula is the person I wish every family had — the one I tried to be for every patient I cared for, and the one I now offer formally, fully, and with the time to truly show up.</p>
+    </article>
+
+    <section class="credentials">
+      <p class="section-eyebrow">Credentials</p>
+      <h2>The path here.</h2>
+      <ul>
+        <li>Registered Nurse · 32 years of clinical experience</li>
+        <li>Emergency and Intensive Care Specialty</li>
+        <li>Founder, Ohm Academy of Healing · Nashville, Tennessee</li>
+        <li>Founder, Timeless RN Wellness Spa · West Nashville</li>
+        <li>Trained in Somatic Experiencing, Polyvagal Theory, and Breathwork</li>
+        <li>Independent Patient Advocate · No hospital, insurance, or system affiliation</li>
+      </ul>
+    </section>
+
+    <section class="personal-note">
+      <hr class="gold-rule short">
+      <p>I am also a mother and a grandmother. I have sat at the bedsides of the people I love and watched the system fail them, despite the brilliance and care of the people working inside it. The work I do now is shaped by what I learned in those rooms — and by what I wish someone had done for me.</p>
+    </section>
+
+    <section class="cta-ink full-width">
+      <h2>If this is the support you need, let us begin.</h2>
+      <a href="contact.html" class="btn btn--cream">Begin a Consultation</a>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="brand-block">
+        <h4>The Clinical Doula</h4>
+        <p class="footer-name">Concierge Clinical Companion<br>&amp; Crisis Doula</p>
+        <p style="margin-top:1rem;">Founded by April Bogle, RN<br>Ohm Academy of Healing<br>Nashville, Tennessee</p>
+      </div>
+      <div>
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="the-work.html">The Work</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="for-physicians.html">For Physicians</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Crisis Activation</h4>
+        <p class="crisis">When a moment becomes a crisis — call directly. I respond personally to every activation call within the hour.
+          <a href="tel:+16159702015">615 · 970 · 2015</a>
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">Est · MMXXVI &nbsp;·&nbsp; Nashville · Tennessee</div>
+  </footer>
+  <script src="script.js" defer></script>
+</body>
+</html>

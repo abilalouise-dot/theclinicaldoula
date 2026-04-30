@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services · The Clinical Doula</title>
+  <meta name="description" content="Three tiers of clinical companion and crisis doula service. The Companion, The Passage, and The Sovereign — choose the one that meets the moment.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <style>
+    .page-hero {
+      padding: 8rem 2rem 4rem;
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .page-hero .eyebrow {
+      color: var(--gold);
+      font-size: 0.72rem;
+      letter-spacing: 0.32em;
+      margin-bottom: 1.5rem;
+      display: block;
+      font-family: var(--sans);
+      font-weight: 300;
+      text-transform: uppercase;
+    }
+    .page-hero h1 {
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+    .page-hero p {
+      font-size: 1.2rem;
+      max-width: 640px;
+      margin: 0 auto;
+      opacity: 0.85;
+    }
+    .tier-section {
+      padding: 6rem 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .tier-header {
+      background: var(--ink);
+      color: var(--cream);
+      padding: 3rem 2.5rem;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 2rem;
+      align-items: center;
+      margin-bottom: 3rem;
+    }
+    .tier-header .num {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 4rem;
+      line-height: 1;
+      color: var(--gold);
+      font-weight: 400;
+    }
+    .tier-header .info h2 {
+      font-family: var(--serif);
+      font-size: 2.2rem;
+      font-weight: 300;
+      margin-bottom: 0.3rem;
+    }
+    .tier-header .info .meta {
+      font-family: var(--sans);
+      font-size: 0.7rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+    .tier-header .info .duration {
+      font-style: italic;
+      opacity: 0.85;
+      font-size: 0.95rem;
+    }
+    .tier-header .price {
+      text-align: right;
+    }
+    .tier-header .price .amount {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 2.4rem;
+      color: var(--gold);
+      display: block;
+      line-height: 1;
+    }
+    .tier-header .price .retainer {
+      font-family: var(--sans);
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      opacity: 0.7;
+      margin-top: 0.5rem;
+    }
+    .tier-body h3 {
+      font-family: var(--sans);
+      font-weight: 300;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-size: 0.78rem;
+      margin: 2.5rem 0 1rem;
+    }
+    .tier-body p {
+      font-size: 1.1rem;
+      line-height: 1.75;
+      margin-bottom: 1.25rem;
+    }
+    .included {
+      background: var(--ink);
+      color: var(--cream);
+      padding: 2.5rem;
+      margin-top: 3rem;
+    }
+    .included h4 {
+      font-family: var(--sans);
+      font-weight: 300;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-size: 0.78rem;
+      margin-bottom: 1.5rem;
+    }
+    .included ul {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.8rem 2rem;
+    }
+    .included li {
+      padding-left: 1.5rem;
+      position: relative;
+      font-size: 1rem;
+    }
+    .included li::before {
+      content: '·';
+      color: var(--gold);
+      position: absolute;
+      left: 0;
+      font-size: 1.5rem;
+      line-height: 1;
+    }
+    .tier-cta {
+      margin-top: 3rem;
+      text-align: center;
+    }
+    .tier-divider {
+      max-width: 200px;
+      margin: 6rem auto;
+      height: 1px;
+      background: var(--gold);
+    }
+    .investment {
+      background: var(--ink);
+      color: var(--cream);
+      padding: 6rem 2rem;
+      text-align: center;
+    }
+    .investment h2 {
+      font-style: italic;
+      font-size: 2rem;
+      font-weight: 300;
+      margin-bottom: 3rem;
+    }
+    .investment-table {
+      max-width: 720px;
+      margin: 0 auto;
+      border: 1px solid rgba(184, 137, 90, 0.3);
+    }
+    .investment-row {
+      display: grid;
+      grid-template-columns: auto 2fr 2fr 1fr;
+      gap: 2rem;
+      padding: 1.5rem 2rem;
+      border-bottom: 1px solid rgba(184, 137, 90, 0.2);
+      align-items: center;
+      text-align: left;
+    }
+    .investment-row:last-child { border-bottom: none; }
+    .investment-row .roman {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 1.4rem;
+      color: var(--gold);
+    }
+    .investment-row .name {
+      font-family: var(--serif);
+      font-size: 1.4rem;
+    }
+    .investment-row .span {
+      font-style: italic;
+      opacity: 0.8;
+      font-size: 0.95rem;
+    }
+    .investment-row .price {
+      font-family: var(--serif);
+      font-style: italic;
+      color: var(--gold);
+      text-align: right;
+      font-size: 1.4rem;
+    }
+    .faq {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 6rem 2rem;
+    }
+    .faq details {
+      border-bottom: 1px solid var(--gold-soft);
+      padding: 1.5rem 0;
+    }
+    .faq details summary {
+      cursor: pointer;
+      font-size: 1.15rem;
+      font-style: italic;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+    .faq details summary::after {
+      content: '+';
+      color: var(--gold);
+      font-size: 1.4rem;
+      font-style: normal;
+      transition: transform 0.3s;
+    }
+    .faq details[open] summary::after { content: '−'; }
+    .faq details p {
+      margin-top: 1rem;
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: var(--ink);
+      opacity: 0.85;
+    }
+    @media (max-width: 700px) {
+      .tier-header { grid-template-columns: 1fr; gap: 1rem; text-align: center; }
+      .tier-header .price { text-align: center; }
+      .included ul { grid-template-columns: 1fr; }
+      .investment-row { grid-template-columns: 1fr; gap: 0.5rem; text-align: center; padding: 1.5rem; }
+      .investment-row .price { text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <header class="site-nav">
+    <nav class="nav-inner" aria-label="Primary">
+      <a href="the-work.html" class="nav-link">The Work</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="for-physicians.html" class="nav-link">For Physicians</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <div class="mobile-menu" role="dialog" aria-modal="true" aria-label="Primary navigation">
+    <a href="index.html" class="menu-mark" aria-label="Home">
+      <svg viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="18" cy="18" r="16" fill="none" stroke="#0A0806" stroke-width="1"/>
+        <circle cx="18" cy="18" r="3" fill="#B8895A"/>
+      </svg>
+    </a>
+    <nav aria-label="Mobile primary">
+      <a href="index.html">Home</a>
+      <a href="the-work.html">The Work</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="for-physicians.html">For Physicians</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <hr class="menu-divider">
+    <span class="menu-call-label">Crisis Activation</span>
+    <a href="tel:+16159702015" class="menu-call">615 · 970 · 2015</a>
+  </div>
+
+  <main id="main">
+
+    <section class="page-hero">
+      <span class="eyebrow">Services</span>
+      <h1>Three tiers. One philosophy.</h1>
+      <p>Choose the one that meets the moment.</p>
+    </section>
+
+    <!-- ── TIER I · COMPANION ────────────────────────────────────── -->
+    <section class="tier-section" id="companion">
+      <div class="tier-header">
+        <div class="num">I</div>
+        <div class="info">
+          <p class="meta">Short-Stay Crisis Support</p>
+          <h2>The Companion</h2>
+          <p class="duration">1 to 3 day hospital events</p>
+        </div>
+        <div class="price">
+          <span class="amount">$2,800</span>
+          <p class="retainer">+ $500 retainer, applied to total</p>
+        </div>
+      </div>
+
+      <div class="tier-body">
+        <h3>Who This Is For</h3>
+        <p>The Companion is designed for the moment no one is ever prepared for — a parent admitted from the ER, a spouse whose chest pain turned into an overnight stay, a friend whose 'routine' procedure became anything but. These shorter hospitalizations feel urgent and frightening, yet families are often left without a single person who can explain what is actually happening. I step in as that person — clinically fluent, calm in the chaos, and completely aligned with your needs alone.</p>
+
+        <h3>Phase 1 — Activation &amp; Intake</h3>
+        <p>Within two hours of your call, I will connect with you or a designated family member by phone or video. I will review the admitting diagnosis, current medications, existing health history, and the names of the treating physicians. I will identify the primary family contact — the person I will communicate with consistently throughout the stay — and establish clear communication preferences. Before ever setting foot in the hospital, I know your situation. I arrive prepared, not catching up.</p>
+
+        <h3>Phase 2 — Bedside Presence</h3>
+        <p>I visit up to twice daily for a total of six bedside hours across the hospitalization. During each visit, I meet directly with the nursing team and attending physician — asking the questions the family didn't know to ask, and translating the answers into language that actually makes sense. I document every conversation, every new order, every test result, and every change in the care plan in a running log that becomes yours to keep. I monitor for overlooked details: a medication dose that was not explained, a follow-up order that was placed but not communicated, a discharge plan being written before the family has been consulted. For family members present at the bedside — often in fight, flight, or freeze — I provide grounding. Breathwork. A hand on the shoulder. The nervous system regulation that allows someone to hear what the doctor is actually saying.</p>
+
+        <h3>Phase 3 — Discharge Review &amp; Home Preparation</h3>
+        <p>Discharge is the most dangerous moment of a hospitalization — and the most rushed. I sit with the patient and family before they leave and read every discharge instruction aloud, explaining each one in plain language. Every new medication is reviewed: what it is, why it was prescribed, how and when to take it, what side effects to watch for, and what must never be combined with it. Every follow-up appointment is confirmed on the calendar before the patient walks out the door. If home health, physical therapy, or medical equipment has been ordered, I verify it is actually arranged — not just "in process." I then write a clear, personalized aftercare summary the family can actually use at home.</p>
+
+        <h3>Phase 4 — 14-Day Home Follow-Up</h3>
+        <p>Three 30-minute check-in calls are scheduled in the two weeks following discharge. These calls serve the whole person, not just the medical chart. I answer questions about medications and symptoms, help navigate any specialist referrals that were given at discharge, and troubleshoot anything that has fallen through the cracks of the post-hospital transition. I also attend to the nervous system — how is sleep? Is anxiety elevated? Is the body still in a trauma response even though the 'event' is over? Gentle somatic guidance is offered to begin the process of returning the body to safety.</p>
+
+        <div class="included">
+          <h4>What Is Included</h4>
+          <ul>
+            <li>Priority 2-hour activation response</li>
+            <li>Complete discharge review &amp; aftercare summary</li>
+            <li>Up to 6 hours total bedside presence</li>
+            <li>Medication reconciliation &amp; plain-language explanation</li>
+            <li>Daily family briefing communication</li>
+            <li>Three 30-minute post-discharge support calls</li>
+          </ul>
+        </div>
+
+        <div class="tier-cta">
+          <a href="contact.html?package=companion" class="btn">Begin with The Companion</a>
+        </div>
+      </div>
+    </section>
+
+    <hr class="tier-divider">
+
+    <!-- ── TIER II · PASSAGE ─────────────────────────────────────── -->
+    <section class="tier-section" id="passage">
+      <div class="tier-header">
+        <div class="num">II</div>
+        <div class="info">
+          <p class="meta">Full Hospitalization Support</p>
+          <h2>The Passage</h2>
+          <p class="duration">3 to 7 day events · Cardiac &amp; stroke · Major surgery · Complex diagnosis</p>
+        </div>
+        <div class="price">
+          <span class="amount">$6,500</span>
+          <p class="retainer">+ $500 retainer, applied to total</p>
+        </div>
+      </div>
+
+      <div class="tier-body">
+        <h3>Who This Is For</h3>
+        <p>The Passage is my most comprehensive hospitalization offering — built for the events that truly shatter a family. A cardiac event. A stroke. Major surgery with a complicated recovery. A diagnosis no one expected. These are the three-to-seven-day stays where the patient is frightened and the family is falling apart in the waiting room, where four different specialists are leaving notes no one has explained, and where discharge feels like being pushed off a cliff without a parachute. Full daily presence, complete family support, and thirty days of guided integration afterward.</p>
+
+        <h3>Phase 1 — Crisis Activation</h3>
+        <p>Same-day response within one hour of contact. My first call is a thorough intake — not a form, a conversation. Who is the patient, what is the diagnosis as it is currently understood, who are the family decision-makers, what is the patient's greatest fear, what are their wishes if things escalate, and who is the attending physician. I establish myself with the charge nurse and hospitalist or attending on Day 1, making clear I am there as the patient's independent advocate. This changes the dynamic immediately — the care team knows that someone who speaks their language is watching, and the family knows they are no longer alone.</p>
+
+        <h3>Phase 2 — Daily Bedside Presence</h3>
+        <p>I visit the hospital once daily, every day of the hospitalization. Before each visit, I call the designated family contact with a morning briefing — here is what happened overnight, here is what we are watching for today, here are the questions I will be asking. At the bedside, I attend physician rounds whenever possible to hear information directly from the source. I translate in real time: what a troponin level means, what an ejection fraction of 35 percent actually indicates for quality of life, what "watchful waiting" looks like and why the team has chosen it. For patients in the ICU, I navigate the language of ventilator settings, vasopressors, drip rates, and critical lab values — not just for the family's understanding, but to ensure that what is being communicated is accurate and complete. Every conversation is documented in a running care narrative that belongs to the family at the end of the stay.</p>
+
+        <h3>Phase 3 — Care Coordination &amp; Family Support</h3>
+        <p>With multiple specialists often involved in a complex hospitalization, the greatest risk is siloing — cardiology is not talking to nephrology, the physical therapist has not seen the neurologist's notes, and no one has given the family a coherent picture. I track every consult, every order, every specialist recommendation, and flag contradictions or gaps before they become problems. I facilitate second opinion conversations if the family has doubts, and navigate insurance pre-authorization when procedures require it. Simultaneously, I hold the family. Not just informationally — emotionally and somatically. Family members in a hospital waiting room are running on adrenaline, fear, and no sleep. I offer daily nervous system grounding: breathwork, body awareness, regulation practices. I help siblings who disagree align on care decisions. I help a spouse who has not eaten translate shock into the clarity needed to sign a consent form.</p>
+
+        <h3>Phase 4 — Discharge Architecture</h3>
+        <p>I do not let a discharge happen until a complete plan exists. I write the discharge architecture myself — a clear, plain-language document that includes every medication with its purpose, dose, timing, and interaction warnings written in language a family member can read at 2am. Every follow-up appointment is confirmed on the calendar. Home health, cardiac rehab, physical therapy, and any required medical equipment are arranged before the patient leaves the building — not "in process," actually confirmed. Warning signs are clearly listed: what warrants a call to the doctor, what warrants a return to the ER. The family leaves the hospital with a document, not a stack of papers they will never open.</p>
+
+        <h3>Phase 5 — 30-Day Home Integration</h3>
+        <p>Four weekly 45-minute integration calls bring the work home. Week one focuses on stabilization: is the patient safe, are medications being taken correctly, is there confusion about any instruction, is there anything that was missed at discharge that needs to be addressed immediately. Weeks two and three move into nervous system integration — the body has been through a medical trauma, and even after the physical crisis resolves, the nervous system remains on high alert. Breathwork, somatic practices, and emotional processing help both patient and family begin to return to a felt sense of safety. Week four is lifestyle architecture: how does life need to shift going forward, what does cardiac rehab actually involve, how do dietary changes get implemented in a real household, and what does sustainable stress reduction look like for this particular person.</p>
+
+        <div class="included">
+          <h4>What Is Included</h4>
+          <ul>
+            <li>Priority 1-hour activation response</li>
+            <li>Running care narrative &amp; documentation</li>
+            <li>Up to 14 hours bedside presence (daily visits)</li>
+            <li>Complete discharge architecture document</li>
+            <li>Morning family briefing calls every day</li>
+            <li>Four 45-minute 30-day integration calls</li>
+            <li>ICU liaison &amp; specialist coordination</li>
+            <li>Somatic grounding for patient &amp; family</li>
+          </ul>
+        </div>
+
+        <div class="tier-cta">
+          <a href="contact.html?package=passage" class="btn">Begin with The Passage</a>
+        </div>
+      </div>
+    </section>
+
+    <hr class="tier-divider">
+
+    <!-- ── TIER III · SOVEREIGN ──────────────────────────────────── -->
+    <section class="tier-section" id="sovereign">
+      <div class="tier-header">
+        <div class="num">III</div>
+        <div class="info">
+          <p class="meta">Annual Concierge Membership</p>
+          <h2>The Sovereign</h2>
+          <p class="duration">12-month retainer · Individuals &amp; families · Peace of mind before crisis arrives</p>
+        </div>
+        <div class="price">
+          <span class="amount">$7,200<span style="font-size:1.1rem;">/yr</span></span>
+          <p class="retainer">$650/month billed monthly</p>
+        </div>
+      </div>
+
+      <div class="tier-body">
+        <h3>Who This Is For</h3>
+        <p>The Sovereign is for the person who has already been through a medical crisis — or who loves someone who has — and has decided they will never navigate the healthcare system alone again. It is for the executive whose father just had a heart attack and who lives two states away. The 60-year-old woman managing her own aging body and caring for an aging parent simultaneously. The entrepreneur who cannot afford to lose weeks to a health crisis they didn't see coming. The family who watched their loved one sit in a hospital room for five days with no one to advocate for them — and refuses to let that happen again. The Sovereign is not a product you buy when you are sick. It is the infrastructure you build so that when something happens, everything is already in place.</p>
+
+        <h3>Quarterly — Wellness Architecture Sessions</h3>
+        <p>Four times per year, I conduct a 60-minute Wellness Architecture session with you. This is not a medical appointment. It is a strategic health conversation. I review all your current medications, supplements, and health conditions — looking for gaps, interactions, or questions you have not known how to ask your doctor. I maintain and update a portable medical summary that documents your diagnoses, medications, allergies, surgeries, and emergency contacts in a format any hospital in any city can use immediately. I review preventive care calendars — what screenings are due, what specialist relationships should be established before they are urgently needed — and help you navigate the scheduling of those appointments. By the end of each session, your health picture is current, organized, and held by someone who knows you.</p>
+
+        <h3>Priority Crisis Deployment</h3>
+        <p>When a medical event occurs, Sovereign members go to the front of the line. Guaranteed same-day response. I deploy to the bedside — physically present — within hours of the call. Up to ten bedside presence hours per qualifying event are included in the membership each year. For extended hospitalizations beyond that scope, additional hours are available at the member-exclusive rate of $125 per hour, rather than the standard $175. For members whose loved ones are hospitalized in a different city, I coordinate remotely and, when circumstances require it, will travel. The Sovereign is built on the premise that when the moment comes, no one is scrambling. The relationship already exists. The medical history is already known. I already know your preferences, fears, and wishes. I arrive as family.</p>
+
+        <h3>Unlimited Navigation Calls</h3>
+        <p>Sovereign members have unlimited access to 20-minute navigation calls with me, available within 24 hours. These calls exist because healthcare confusion does not happen only during hospitalizations. A new diagnosis arrives on a Tuesday afternoon and no one has explained what it means. A physician recommends a procedure and you want to understand your options before consenting. A prescription is filled and you are worried about an interaction with something you already take. A specialist cancels and you do not know how to advocate for a faster appointment. These calls are the ongoing thread of informed care that the current healthcare system does not provide — and that the Sovereign delivers without limit.</p>
+
+        <h3>Monthly Nervous System Check-In</h3>
+        <p>Once per month, I hold a 45-minute somatic session with you. This is not a wellness check or a medical review. It is dedicated nervous system care. Chronic illness, health anxiety, caregiver fatigue, post-event trauma — these live in the body long after the charts are closed and the insurance claim is settled. I draw on my training in somatic experiencing, polyvagal theory, and breathwork to guide you back into a regulated, embodied state each month. For members who carry the weight of a loved one's health on their nervous system as much as their own, this session is often the most valued part of the entire membership.</p>
+
+        <div class="included">
+          <h4>What Is Included</h4>
+          <ul>
+            <li>Guaranteed same-day crisis response</li>
+            <li>Living portable medical summary, updated quarterly</li>
+            <li>Up to 10 bedside presence hours per year</li>
+            <li>Member-rate extended bedside hours at $125/hr</li>
+            <li>Unlimited 20-minute navigation calls</li>
+            <li>One additional family member included</li>
+            <li>Quarterly 60-minute Wellness Architecture sessions</li>
+            <li>Priority scheduling at Timeless RN Wellness Spa</li>
+            <li>Monthly 45-minute somatic check-in</li>
+            <li>15% member discount on all Timeless RN services</li>
+          </ul>
+        </div>
+
+        <div class="tier-cta">
+          <a href="contact.html?package=sovereign" class="btn">Begin with The Sovereign</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── INVESTMENT SUMMARY ────────────────────────────────────── -->
+    <section class="investment full-width">
+      <p class="section-eyebrow">All Packages at a Glance</p>
+      <h2>Investment Summary</h2>
+
+      <div class="investment-table">
+        <div class="investment-row">
+          <span class="roman">I</span>
+          <span class="name">The Companion</span>
+          <span class="span">1 to 3 day events</span>
+          <span class="price">$2,800</span>
+        </div>
+        <div class="investment-row">
+          <span class="roman">II</span>
+          <span class="name">The Passage</span>
+          <span class="span">3 to 7 day events</span>
+          <span class="price">$6,500</span>
+        </div>
+        <div class="investment-row">
+          <span class="roman">III</span>
+          <span class="name">The Sovereign</span>
+          <span class="span">Annual membership</span>
+          <span class="price">$7,200/yr</span>
+        </div>
+      </div>
+
+      <p style="max-width: 720px; margin: 3rem auto 0; opacity: 0.8; font-style: italic; font-size: 1rem; line-height: 1.6;">Each engagement begins with a $500 activation retainer that secures my availability and initiates intake. The retainer is non-refundable but applied in full toward the total package investment. All packages are private pay; payment plans are available for The Sovereign membership.</p>
+    </section>
+
+    <!-- ── FAQ ───────────────────────────────────────────────────── -->
+    <section class="faq">
+      <p class="section-eyebrow">Frequently Asked</p>
+      <h2 class="section-title">Questions, answered.</h2>
+
+      <details>
+        <summary>Are you covered by insurance?</summary>
+        <p>No. The Clinical Doula is a private-pay service. My independence from the insurance and hospital systems is exactly what allows me to be wholly on your side.</p>
+      </details>
+
+      <details>
+        <summary>How quickly can you respond in a crisis?</summary>
+        <p>For Sovereign members, response is guaranteed same-day, with bedside arrival within hours. For Companion and Passage clients, I respond within one to two hours of activation.</p>
+      </details>
+
+      <details>
+        <summary>Do you travel?</summary>
+        <p>I am based in Nashville, Tennessee, and primarily serve hospitals across Middle Tennessee. For existing Sovereign members, I will travel to other cities when circumstances require it. Travel is quoted separately and added to the engagement.</p>
+      </details>
+
+      <details>
+        <summary>Can I retain you for someone other than myself?</summary>
+        <p>Yes. The most common engagement is exactly this — an adult child retaining me for a parent, or a spouse retaining me for their partner. We will need a signed HIPAA authorization from the patient or their healthcare power of attorney.</p>
+      </details>
+
+      <details>
+        <summary>What is the activation retainer?</summary>
+        <p>$500 paid at the start of any new engagement. It secures my availability, initiates intake, and is applied in full toward your total package investment. The retainer is non-refundable.</p>
+      </details>
+
+      <details>
+        <summary>Can I switch tiers mid-engagement?</summary>
+        <p>Yes. If you begin with The Companion and the situation evolves into a longer hospitalization, we can upgrade to The Passage at any time. The fee difference is prorated.</p>
+      </details>
+    </section>
+
+    <section class="cta-ink full-width">
+      <h2>Begin with a complimentary 30-minute consultation.</h2>
+      <a href="contact.html" class="btn btn--cream">Schedule Consultation</a>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="brand-block">
+        <h4>The Clinical Doula</h4>
+        <p class="footer-name">Concierge Clinical Companion<br>&amp; Crisis Doula</p>
+        <p style="margin-top:1rem;">Founded by April Bogle, RN<br>Ohm Academy of Healing<br>Nashville, Tennessee</p>
+      </div>
+      <div>
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="the-work.html">The Work</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="for-physicians.html">For Physicians</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Crisis Activation</h4>
+        <p class="crisis">When a moment becomes a crisis — call directly. I respond personally to every activation call within the hour.
+          <a href="tel:+16159702015">615 · 970 · 2015</a>
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">Est · MMXXVI &nbsp;·&nbsp; Nashville · Tennessee</div>
+  </footer>
+  <script src="script.js" defer></script>
+</body>
+</html>

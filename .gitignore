@@ -1,0 +1,21 @@
+# Internal brand documents — keep local, don't publish to public repo
+*.pdf
+*.exe
+
+# OS detritus
+.DS_Store
+Thumbs.db
+desktop.ini
+*.lnk
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*~
+
+# Future React build (when you port via Claude Code)
+node_modules/
+dist/
+.env
+.env.local
